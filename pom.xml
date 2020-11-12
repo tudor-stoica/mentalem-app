@@ -1,0 +1,5 @@
+<dependency>
+	<groupID>org.jsoup</groupId>
+	<artificatId>jsoup</artifactId>
+	<version>1.8.1</version>
+</dependency>
