@@ -1,4 +1,12 @@
-.logo {
-    background-color: #ccffff;
-    overflow: hidden;
+.banner {
+    padding: 30px;
+    text-align: center;
+    background: #ccffff;
+    color: black;
+    font-size: 10px;
+}
+
+#logo {
+    max-height: 100px;
+    width: auto;
 }
