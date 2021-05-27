@@ -191,7 +191,7 @@
     $(document).ready(function () {
         var query = location.search.substr(1); // query contains the query parameters. See: https://www.w3schools.com/jsref/prop_loc_search.asp
         var code = getCodeQueryParam(query);
-        $("#code").append(code);
+        $("#code").append(code); // should be able to use the variable name 'code' in API functions
     })
 </script>
 </html>
