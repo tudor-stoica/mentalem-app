@@ -173,8 +173,11 @@
         <div class="wide-box">
             <h2>The code is: <span id="authCode"></span></h2>
             <script>
-                let authCode = "abcd";
-                document.getElementById("authCode").innerHTML = authCode;
+                var authCode = window.location.search;
+                var urlParams = new URLSearchParams(authCode);
+                var code = urlParams.get('code');
+                code = code.slice(0, -2);
+                document.getElementById("authCode").innerHTML = code;
             </script>
         </div>
     </div>
