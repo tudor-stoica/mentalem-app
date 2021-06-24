@@ -170,7 +170,13 @@
             <p></p>
         </div>
         <div class="pie-box"></div>
-        <div class="wide-box"></div>
+        <div class="wide-box">
+            <h2>The code is: <span id="authCode"></span></h2>
+            <script>
+                let authCode = "abcd";
+                document.getElementById("authCode").innerHTML = authCode;
+            </script>
+        </div>
     </div>
 </body>
 <script>
@@ -192,6 +198,7 @@
         var query = location.search.substr(1); // query contains the query parameters. See: https://www.w3schools.com/jsref/prop_loc_search.asp
         var code = getCodeQueryParam(query);
         $("#code").append(code); // should be able to use the variable name 'code' in API functions
+
     })
 </script>
 </html>
