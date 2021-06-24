@@ -185,4 +185,19 @@
         </div>
     </div>
 </body>
+<script>
+
+    var ourRequest = new XMLHttpRequest();
+    var str1 = 'https://graph.facebook.com/v11.0/me/accounts?access_token={';
+    var str2 = '}';
+    var link = str1.concat(authCode, str2)
+    console.log(link)
+    
+    ourRequest.open('GET',link);
+    ourRequest.onload = function(){
+        console.log(ourRequest.responseText);
+    };
+    ourRequest.send();
+
+</script>
 </html>
