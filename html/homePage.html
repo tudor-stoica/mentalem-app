@@ -176,32 +176,10 @@
                 var authCode = window.location.search;
                 var urlParams = new URLSearchParams(authCode);
                 var code = urlParams.get('code');
-                code = code.slice(0, -2);
+                //code = code.slice(0, -1);
                 document.getElementById("authCode").innerHTML = code;
             </script>
         </div>
     </div>
 </body>
-<script>
-    function getCodeQueryParam(query) {
-        const params = query.split("&");
-        for (var i = 0; i < params.length; i++) {
-            var pair = params[i];
-            if (pair === "")
-                continue;
-            var parts = pair.split("=")
-            if (parts[0] === 'code') {
-                return parts[1];
-            }
-        }
-        return null;
-    }
-
-    $(document).ready(function () {
-        var query = location.search.substr(1); // query contains the query parameters. See: https://www.w3schools.com/jsref/prop_loc_search.asp
-        var code = getCodeQueryParam(query);
-        $("#code").append(code); // should be able to use the variable name 'code' in API functions
-
-    })
-</script>
 </html>
