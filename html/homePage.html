@@ -32,6 +32,11 @@
         }
         /*Styling for home button*/
         .homebtn {
+            margin-left: 25px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+        }
+        .homebtn a{
             font-family: 'Poppins';
             background-color: #FFFFFF;
             border: none;
@@ -40,16 +45,14 @@
             font-size: 16px;
             cursor: pointer;
             border-radius: 10px;
-            margin-left: 25px;
-            margin-top: 50px;
-            margin-bottom: 25px;
-            transition: 0.2s;
-        }
+            text-decoration: none;
+        }  
             /*Styling for home button on hover*/
-            .homebtn:hover {
+            .homebtn a:hover {
                 background-color: lightgray;
                 color: #FFFFFF;
             }
+
         /*Styling for social buttons*/
         .socialbtn {
             font-family: 'Poppins';
@@ -137,7 +140,6 @@
     <!--The menu to left of screen-->
     <div class="verticalStrip">
         <div class="homebtn"><a href="/html/index.html"><i class="fa fa-home"></i> Home</a></div>
-        <!-- <button class="homebtn"><i class="fa fa-home"></i> Home</button> -->
         <button class="socialbtn"><b>Instagram</b></button>
         <button class="socialbtn"><b>Facebook</b></button>
         <button class="socialbtn"><b>LinkedIn</b></button>
