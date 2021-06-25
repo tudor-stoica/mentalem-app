@@ -221,19 +221,35 @@
         </div>
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 
-    var ourRequest = new XMLHttpRequest();
-    var str1 = 'https://graph.facebook.com/v11.0/me/accounts?access_token={';
-    var str2 = '}';
-    var link = str1.concat(authCode, str2)
-    console.log(link)
+    // var ourRequest = new XMLHttpRequest();
+    // var str1 = 'https://graph.facebook.com/v11.0/me/accounts?access_token={';
+    // var str2 = '}';
+    // var link = str1.concat(authCode, str2)
+    // console.log(link)
     
-    ourRequest.open('GET',link);
-    ourRequest.onload = function(){
-        console.log(ourRequest.responseText);
-    };
-    ourRequest.send();
+    // ourRequest.open('GET',link);
+    // ourRequest.onload = function(){
+    //     console.log(ourRequest.responseText);
+    // };
+    // ourRequest.send();
+
+
+    $(document).ready(function () {
+        $("#btnGetToken").click(function () {
+            var user_id = "17841431132362118";
+            var access_token = authCode;
+            var url = "https://graph.instagram.com/" + user_id + "?fields=id,username&access_token=" + access_token;
+ 
+            $.get(url, function (data, status) {
+                var id = data.id;
+                var username = data.username;
+                alert("id: " + id + " and username: " + username);
+            });
+        });
+    });
 
 </script>
 </html>
