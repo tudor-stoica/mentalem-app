@@ -213,11 +213,7 @@
             <h2>The code is: <span id="authCode"></span></h2>
             <button type="button" id="btnGetToken">Get data</button>
             <script>
-                var authCode = window.location.search;
-                var urlParams = new URLSearchParams(authCode);
-                var code = urlParams.get('code');
-                code = code.substring(6);
-                document.getElementById("authCode").innerHTML = code;
+                
             </script>
         </div>
     </div>
@@ -240,8 +236,12 @@
 
     $(document).ready(function () {
         $("#btnGetToken").click(function () {
+            var authCode = window.location.search;
+            var urlParams = new URLSearchParams(authCode);
+            authCode = urlParams.get('code');
+            document.getElementById("authCode").innerHTML = authCode;
             var user_id = "17841431132362118";
-            var url = "https://graph.instagram.com/" + user_id + "?fields=id,username&access_token=s" + authCode;
+            var url = "https://graph.instagram.com/" + user_id + "?fields=id,username&access_token=" + authCode;
             console.log(authCode);
             $.get(url, function (data, status) {
                 var id = data.id;
