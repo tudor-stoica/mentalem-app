@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <style>
         /*Styling for the strip on side*/
         .verticalStrip {
@@ -216,7 +216,7 @@
                 var authCode = window.location.search;
                 var urlParams = new URLSearchParams(authCode);
                 var code = urlParams.get('code');
-                //code = code.slice(0, -1);
+                code = code.substring(6);
                 document.getElementById("authCode").innerHTML = code;
             </script>
         </div>
