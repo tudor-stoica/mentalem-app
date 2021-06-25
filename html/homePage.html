@@ -235,12 +235,12 @@
 
 
     $(document).ready(function () {
+        var authCode = window.location.search;
+        var urlParams = new URLSearchParams(authCode);
+        authCode = urlParams.get('code');
+        document.getElementById("authCode").innerHTML = authCode;
+        var user_id = "17841431132362118";
         $("#btnGetToken").click(function () {
-            var authCode = window.location.search;
-            var urlParams = new URLSearchParams(authCode);
-            authCode = urlParams.get('code');
-            document.getElementById("authCode").innerHTML = authCode;
-            var user_id = "17841431132362118";
             var url = "https://graph.instagram.com/" + user_id + "?fields=id,username&access_token=" + authCode;
             console.log(authCode);
             $.get(url, function (data, status) {
