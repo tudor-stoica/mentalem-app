@@ -240,6 +240,8 @@
         authCode = urlParams.get('code');
         document.getElementById("authCode").innerHTML = authCode;
         var user_id = "17841431132362118";
+        // Hard coded the authCode. It changes after being used the first time into a 1hr long token.
+        authCode = "IGQVJYUDdEQVdRU2M3SHBYTXNtb0E4TVV3RXJVQnNBNERSMlhjWWZAhT1JYWHNkQWxJWVoxNC1ETHBxWVZAvUy1mamhOcDhkbUlnUnE2R3J6NFpxNFZAxamtTYnEzcG5JRV96dE52cjFLQmpuWEhtWDlEekFlQ0FUajJtdkdB"
         $("#btnGetToken").click(function () {
             var url = "https://graph.instagram.com/" + user_id + "?fields=id,username&access_token=" + authCode;
             console.log(authCode);
