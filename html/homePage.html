@@ -241,9 +241,8 @@
     $(document).ready(function () {
         $("#btnGetToken").click(function () {
             var user_id = "17841431132362118";
-            var access_token = authCode;
-            var url = "https://graph.instagram.com/" + user_id + "?fields=id,username&access_token=" + access_token;
- 
+            var url = "https://graph.instagram.com/" + user_id + "?fields=id,username&access_token=s" + authCode;
+            console.log(authCode);
             $.get(url, function (data, status) {
                 var id = data.id;
                 var username = data.username;
