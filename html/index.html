@@ -58,8 +58,7 @@
       console.log('Welcome!  Fetching your information.... ');
       FB.api('/me', function(response) {
         console.log('Successful login for: ' + response.name);
-        document.getElementById('status').innerHTML =
-          'Thanks for logging in, ' + response.name + '!';
+        openHome();
       });
     }
   
@@ -83,7 +82,10 @@
     window.location.href = 'https://api.instagram.com/oauth/authorize?client_id=398775467796450&redirect_uri=https://tudor-stoica.github.io/mentalem-app/html/homePage.html&scope=user_profile,user_media&response_type=code';
   }
   function openMentalem() {
-    window.location.href = 'https:www.mentalem.ca/';
+    window.location.href = 'https://www.mentalem.ca/';
+  }
+  function openHome() {
+    window.location.href = "https://tudor-stoica.github.io/mentalem-app/html/homePage.html"
   }
   function getCodeQueryParam(query) {
         const params = query.split("&");
