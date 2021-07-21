@@ -58,13 +58,6 @@ button {
     transition-duration: 0.3s;
 }
 
-#center {
-    margin-left: auto;
-    margin-right: auto;
-    height: 50px;
-    margin-top: 2%;
-}
-
 button:hover {
     color: #61C9CE;
     background-color: #FFFFFF;
