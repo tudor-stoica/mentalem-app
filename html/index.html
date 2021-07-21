@@ -53,12 +53,16 @@
         statusChangeCallback(response);        // Returns the login status.
       });
     };
+
+  function openHome() {
+    window.location.href = "https://tudor-stoica.github.io/mentalem-app/html/homePage.html"
+  }
    
     function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
       console.log('Welcome!  Fetching your information.... ');
       FB.api('/me', function(response) {
         console.log('Successful login for: ' + response.name);
-        openHome();
+        
       });
     }
   
@@ -83,9 +87,6 @@
   }
   function openMentalem() {
     window.location.href = 'https://www.mentalem.ca/';
-  }
-  function openHome() {
-    window.location.href = "https://tudor-stoica.github.io/mentalem-app/html/homePage.html"
   }
   function getCodeQueryParam(query) {
         const params = query.split("&");
