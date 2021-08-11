@@ -14,12 +14,68 @@
 
 
 <body>
-
   <h1>Welcome to the Mentalem Social Media Statistics Tool!</h1>
   <h2>Please choose a button below to login.</h1>
   <button class="button1" style="margin-top: 5%;" onclick="igButton()">Instagram</button>
   <button class="button" onclick="openMentalem()">Facebook</button>
-  <button class="button" onclick="openMentalem()">LinkedIn</button>
+  
+  <script>
+
+    function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+      console.log('statusChangeCallback');
+      console.log(response);                   // The current login status of the person.
+      if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+        testAPI();
+        window.location.href = "https://tudor-stoica.github.io/mentalem-app/html/homePage.html?code=" + response.authResponse.accessToken;
+      } else {                                 // Not logged into your webpage or we are unable to tell.
+        document.getElementById('status').innerHTML = 'Please log ' +
+          'into this webpage.';
+      }
+    }
+  
+  
+    function checkLoginState() {               // Called when a person is finished with the Login Button.
+      FB.getLoginStatus(function(response) {   // See the onlogin handler
+        statusChangeCallback(response);
+      });
+    }
+  
+  
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '347980456260467',
+        cookie     : true,                     // Enable cookies to allow the server to access the session.
+        xfbml      : true,                     // Parse social plugins on this webpage.
+        version    : 'v11.0'                   // Use this Graph API version for this call.
+      });
+  
+  
+      FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+        statusChangeCallback(response);        // Returns the login status.
+      });
+    };
+   
+    function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+      console.log('Welcome!  Fetching your information.... ');
+      FB.api('/me', function(response) {
+        console.log('Successful login for: ' + response.name);
+        
+      });
+    }
+  
+  </script>
+  
+  
+  <!-- The JS SDK Login Button -->
+  
+  <fb:login-button scope="public_profile,email,instagram_basic,pages_show_list" onlogin="checkLoginState();">
+  </fb:login-button>
+  
+  <div id="status">
+  </div>
+  
+  <!-- Load the JS SDK asynchronously -->
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 </body>
 
 <script>
@@ -27,7 +83,7 @@
     window.location.href = 'https://api.instagram.com/oauth/authorize?client_id=398775467796450&redirect_uri=https://tudor-stoica.github.io/mentalem-app/html/instagram.html&scope=user_profile,user_media&response_type=code';
   }
   function openMentalem() {
-    window.location.href = 'https:www.mentalem.ca/';
+    window.location.href = 'https://www.mentalem.ca/';
   }
   function getCodeQueryParam(query) {
         const params = query.split("&");
