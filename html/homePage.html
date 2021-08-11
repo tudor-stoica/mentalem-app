@@ -187,34 +187,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 
-    // var ourRequest = new XMLHttpRequest();
-    // var str1 = 'https://graph.facebook.com/v11.0/me/accounts?access_token={';
-    // var str2 = '}';
-    // var link = str1.concat(authCode, str2)
-    // console.log(link)
-    
-    // ourRequest.open('GET',link);
-    // ourRequest.onload = function(){
-    //     console.log(ourRequest.responseText);
-    // };
-    // ourRequest.send();
-
-
     $(document).ready(function () {
         var authCode = window.location.search;
         var urlParams = new URLSearchParams(authCode);
         authCode = urlParams.get('code');
         document.getElementById("authCode").innerHTML = authCode;
         var user_id = "17841431132362118";
-        // Hard coded the authCode. It changes after being used the first time into a 1hr long token.
-        authCode = "IGQVJYUDdEQVdRU2M3SHBYTXNtb0E4TVV3RXJVQnNBNERSMlhjWWZAhT1JYWHNkQWxJWVoxNC1ETHBxWVZAvUy1mamhOcDhkbUlnUnE2R3J6NFpxNFZAxamtTYnEzcG5JRV96dE52cjFLQmpuWEhtWDlEekFlQ0FUajJtdkdB"
         $("#btnGetToken").click(function () {
-            var url = "https://graph.instagram.com/" + user_id + "?fields=id,username&access_token=" + authCode;
+            var url = "https://graph.facebook.com/v11.0/me/accounts?access_token=" + authCode;
             console.log(authCode);
             $.get(url, function (data, status) {
-                var id = data.id;
-                var username = data.username;
-                alert("id: " + id + " and username: " + username);
+                // var id = data.id;
+                // var username = data.username;
+                // alert("id: " + id + " and username: " + username);
             });
         });
     });
