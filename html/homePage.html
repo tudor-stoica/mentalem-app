@@ -198,9 +198,7 @@
             console.log(authCode);
             $.get(url, function (data) {
                 console.log(data);
-                console.log(data[0]);
-                var id = JSON.parse(data[0]);
-                alert(id.id);
+                console.log(data.data[0].id);
             });
         });
     });
