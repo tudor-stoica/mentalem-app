@@ -199,8 +199,8 @@
             $.get(url, function (data) {
                 console.log(data);
                 console.log(data[0]);
-                var id = data[0].id;
-                console.log(id);
+                var id = JSON.parse(data[0]);
+                alert(id.id);
             });
         });
     });
