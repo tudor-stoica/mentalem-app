@@ -198,10 +198,8 @@
             var url = "https://graph.facebook.com/v11.0/me/accounts?access_token=" + authCode;
             console.log(authCode);
             $.get(url, function (data, status) {
-                //var id = data.id;
-                //const obj = JSON.parse(data);
-                var id = data.id;
-                console.log(id);
+                const obj = JSON.parse(data);
+                console.log(obj);
             });
         });
     });
