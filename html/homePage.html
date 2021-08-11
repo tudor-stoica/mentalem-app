@@ -198,7 +198,9 @@
             console.log(authCode);
             $.get(url, function (data) {
                 console.log(data);
-                console.log(data[0].id);
+                console.log(data[0]);
+                var id = data[0].id;
+                console.log(id);
             });
         });
     });
